@@ -1,0 +1,27 @@
+{
+    "baseUrls": {
+      "apiBase": "https://localhost:5099/api/",
+      "webBase": "https://localhost:44315/"
+    },
+    "ConnectionStrings": {
+        "CatalogConnection": "Server=rdsv10-mydatabase-ejnzzofpde5p.cjiplmddpwsq.us-east-1.rds.amazonaws.com;uid=SQLServer;pwd=password;Integrated Security=false;Initial Catalog=Microsoft.eShopOnWeb.CatalogDb;",
+        "IdentityConnection": "Server=rdsv10-mydatabase-ejnzzofpde5p.cjiplmddpwsq.us-east-1.rds.amazonaws.com;uid=SQLServer;pwd=password;Integrated Security=false;Initial Catalog=Microsoft.eShopOnWeb.Identity;"
+    },
+    "CatalogBaseUrl": "",
+    "Logging": {
+      "IncludeScopes": false,
+      "LogLevel": {
+        "Default": "Warning",
+        "Microsoft": "Warning",
+        "System": "Warning"
+      },
+      "AllowedHosts": "*"
+    },
+    "Kestrel": {
+      "EndPoints": {
+        "Http": {
+          "Url": "http://0.0.0.0:5000"
+        }
+      }
+    }
+}
