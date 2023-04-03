@@ -1,2 +1,2 @@
 #!/bin/bash
-dotnet run --launch-profile Web
+dotnet run --project /CloudShirt/src/Web/Web.csproj --launch-profile Web
