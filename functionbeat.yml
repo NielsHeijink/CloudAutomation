@@ -1,0 +1,35 @@
+functionbeat.provider.aws.endpoint: "s3.amazonaws.com"
+functionbeat.provider.aws.deploy_bucket: "functionbeat-deploy-bucket364"
+functionbeat.provider.aws.functions:
+  - name: cloudwatch
+    enabled: true
+    type: cloudwatch_logs
+    role: arn:aws:iam::307982340968:role/LabRole
+    triggers:
+      - log_group_name: /aws/lambda/my-lambda-functionbeat-function
+  - name: sqs
+    enabled: false
+    type: sqs
+    description: "lambda function for SQS events"
+    triggers:
+      - event_source_arn: arn:aws:sqs:us-east-1:xxxxx:myevents
+  - name: kinesis
+    enabled: false
+    type: kinesis
+    description: "lambda function for Kinesis events"
+    triggers:
+      - event_source_arn: arn:aws:kinesis:us-east-1:xxxxx:myevents
+  - name: cloudwatch-logs-kinesis
+    enabled: false
+    type: cloudwatch_logs_kinesis
+    description: "lambda function for Cloudwatch logs in Kinesis events"
+    triggers:
+      - event_source_arn: arn:aws:kinesis:us-east-1:xxxxx:myevents
+output.elasticsearch:
+  hosts: ["0.0.0.0:9200"]
+  username: "elastic"
+  password: "changeme"
+setup.template.settings:
+setup.kibana:
+logging.to_files: true
+logging.files:
