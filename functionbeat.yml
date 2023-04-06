@@ -6,7 +6,7 @@ functionbeat.provider.aws.functions:
     type: cloudwatch_logs
     role: arn:aws:iam::307982340968:role/LabRole
     triggers:
-      - log_group_name: /aws/lambda/my-lambda-functionbeat-function
+      - log_group_name: ElasticStackMonitorGroup
   - name: sqs
     enabled: false
     type: sqs
