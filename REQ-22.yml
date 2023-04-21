@@ -18,5 +18,5 @@
       day: "*"
       month: "*"
       weekday: "*"
-      job: journalctl -u cloudshirt.service >> /mnt/efs/log
+      job: journalctl -u cloudshirt.service >> /mnt/efs/logging.txt
       state: present
