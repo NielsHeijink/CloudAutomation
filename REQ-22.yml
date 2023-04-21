@@ -12,7 +12,7 @@
 
   - name: Maak een cronjob voor logfiles en schrijf deze naar de mount
     cron:
-      name: 
+      name: cronjob voor logfiles
       minute: "0"
       hour: "0"
       day: "*"
