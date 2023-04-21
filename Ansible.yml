@@ -1,0 +1,22 @@
+#amazon-linux-extras install ansible2
+---
+- name: 
+  hosts: localhost
+  become: true
+  tasks:
+
+  - name: installeerd cron als het nog niet geïnstalleerd is
+    yum:
+      name: crontabs
+      state: present
+
+  - name: Maak een cronjob voor logfiles en schrijf deze naar de mount
+    cron:
+      name: cronjob voor logfiles
+      minute: "0"
+      hour: "0"
+      day: "*"
+      month: "*"
+      weekday: "*"
+      job: journalctl -u cloudshirt.service >> /mnt/efs/logging.txt
+      state: present
